@@ -1,0 +1,30 @@
+Switch Baseline Management & Local Access Configuration
+
+
+enable 
+configure terminal 
+
+
+hostname SW1 
+ username admin secret cisco
+ enable secret cisco123
+
+interface vlan 1 
+ ip address 192.168.1.10 255.255.255.0
+ ip default-gateway 192.168.1.1 
+
+
+line console 0 
+ login local 
+ exec-time 5 0 
+
+exit 
+
+copy running-config startup-config 
+
+
+
+
+
+
+

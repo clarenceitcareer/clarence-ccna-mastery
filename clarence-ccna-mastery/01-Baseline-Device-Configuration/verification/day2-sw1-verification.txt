@@ -1,0 +1,44 @@
+=== show ip interface brief ===
+
+SW1#show ip interface brief 
+Interface              IP-Address      OK? Method Status                Protocol 
+FastEthernet0/1        unassigned      YES manual up                    up 
+GigabitEthernet0/1     unassigned      YES manual down                  down 
+GigabitEthernet0/2     unassigned      YES manual down                  down 
+
+Vlan1                  192.168.1.10    YES manual up                    up
+SW1#
+
+
+=== show running-config | ip default-gateway ===
+
+SW1#show running-config | include ip default-gateway
+ip default-gateway 192.168.1.1
+
+
+=== show running-config | section line console ===
+
+SW1#show running-config |section line console 
+line con 0
+ login local
+ exec-timeout 5 0
+
+=== show startup-config ===
+
+SW1#show startup-config
+Using 1261 bytes
+!
+version 15.0
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname SW1
+!
+enable secret 5 $1$mERr$5.a6P4JqbNiMX01usIfka/
+!
+!
+!
+!
+username admin secret 5 $1$mERr$hx5rVt7rPNoS4wqbXKX7m0
+
